@@ -12,6 +12,13 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('admin.home');
 
+    // 资讯
     $router->resource('news', NewsController::class);
+
+    // 案例
+    $router->resource('projects',ProjectController::class);
+
+    // 富文本文件上传
+    $router->post('/simditor/upload','UploadController@upload');
 
 });
