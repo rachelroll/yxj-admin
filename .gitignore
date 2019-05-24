@@ -11,3 +11,6 @@ npm-debug.log
 yarn-error.log
 .idea/
 .styleci.yml
+.DS_Store
+public/.DS_Store
+public/vendor/.DS_Store
