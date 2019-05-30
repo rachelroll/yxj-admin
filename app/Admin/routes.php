@@ -21,4 +21,6 @@ Route::group([
     // 富文本文件上传
     $router->post('/simditor/upload','UploadController@upload');
 
+    // 学员管理
+    $router->resource('members',MemberController::class);
 });
