@@ -82,11 +82,11 @@ class MemberController extends Controller
         $grid = new Grid(new Member);
 
         $grid->id('Id');
-        $grid->name('Name');
-        $grid->company('Company');
-        $grid->phone('Phone');
-        $grid->created_at('Created at');
-        $grid->updated_at('Updated at');
+        $grid->name('姓名');
+        $grid->company('公司');
+        $grid->phone('联系方式');
+        $grid->created_at('创建时间');
+        $grid->updated_at('更新时间');
 
         return $grid;
     }
@@ -102,11 +102,11 @@ class MemberController extends Controller
         $show = new Show(Member::findOrFail($id));
 
         $show->id('Id');
-        $show->name('Name');
-        $show->company('Company');
-        $show->phone('Phone');
-        $show->created_at('Created at');
-        $show->updated_at('Updated at');
+        $show->name('姓名');
+        $show->company('公司');
+        $show->phone('联系方式');
+        $show->created_at('创建时间');
+        $show->updated_at('更新时间');
 
         return $show;
     }
@@ -120,9 +120,9 @@ class MemberController extends Controller
     {
         $form = new Form(new Member);
 
-        $form->text('name', 'Name');
-        $form->text('company', 'Company');
-        $form->mobile('phone', 'Phone');
+        $form->text('name', '姓名');
+        $form->text('company', '公司');
+        $form->mobile('phone', '联系方式');
 
         return $form;
     }
