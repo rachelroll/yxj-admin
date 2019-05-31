@@ -23,4 +23,7 @@ Route::group([
 
     // 学员管理
     $router->resource('members',MemberController::class);
+
+    // 视频
+    $router->resource('video',MediaController::class);
 });
