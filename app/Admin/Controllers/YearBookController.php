@@ -83,10 +83,16 @@ class YearBookController extends Controller
 
         $grid->id('Id');
         $grid->title('书名');
-        $grid->cover('封面图');
-        $grid->content('上传PDF文件');
+        //$grid->cover('封面图');
+        //$grid->content('上传PDF文件');
         //$grid->created_at('Created at');
         //$grid->updated_at('Updated at');
+
+        // 禁用查看按钮
+        $grid->actions(function ($actions) {
+            $actions->disableView();
+            //$actions->disableDelete();
+        });
 
         return $grid;
     }
@@ -100,13 +106,6 @@ class YearBookController extends Controller
     protected function detail($id)
     {
         $show = new Show(YearBook::findOrFail($id));
-
-        $show->id('Id');
-        $show->title('Title');
-        $show->cover('Cover');
-        $show->content('Content');
-        $show->created_at('Created at');
-        $show->updated_at('Updated at');
 
         return $show;
     }
