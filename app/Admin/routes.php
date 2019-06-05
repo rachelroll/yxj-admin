@@ -12,18 +12,21 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('admin.home');
 
-    // ×ÊÑ¶
+    // èµ„è®¯
     $router->resource('news', NewsController::class);
 
-    // °¸Àý
+    // æ¡ˆä¾‹
     $router->resource('projects',ProjectController::class);
 
-    // ¸»ÎÄ±¾ÎÄ¼þÉÏ´«
+    // å¯Œæ–‡æœ¬æ–‡ä»¶ä¸Šä¼ 
     $router->post('/simditor/upload','UploadController@upload');
 
-    // Ñ§Ô±¹ÜÀí
+    // å­¦å‘˜ç®¡ç†
     $router->resource('members',MemberController::class);
 
-    // ÊÓÆµ
+    // è§†é¢‘
     $router->resource('video',MediaController::class);
+
+    // å¹´é‰´
+    $router->resource('yearbooks',YearBookController::class);
 });
