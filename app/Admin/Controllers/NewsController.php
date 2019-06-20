@@ -160,7 +160,10 @@ class NewsController extends Controller
         $form->text('description', '文章简介')->rules('required',['required'=>'必填项']);
         $form->text('author', '作者姓名');
         $form->simditor('content', '文章内容')->rules('required',['required'=>'必填项']);
-        $form->image('cover', '封面图')->rules('required',['required'=>'必填项']);
+        $form->image('cover', '封面图')->crop(233, 160)->rules('required',['required'=>'必填项']);
+
+        //$form->cropper('cover','封面图')->cRatio(233,160)->rules('required',['required'=>'必填项']);
+
         $form->radio('category', '文章分类')->options([1 => '机构动态',2 => '项目报道', 3 => '乡村观察', 4 => '最新动态'])->default(1)->rules('required',['required'=>'必填项']);
         $form->datetime('time',  '发布时间')->options(['defaultDate' => date('Y-m-d H:m:s')]);
         $options = [

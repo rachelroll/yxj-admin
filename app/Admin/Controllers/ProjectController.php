@@ -96,7 +96,7 @@ class ProjectController extends Controller
         // 禁用查看按钮
         $grid->actions(function ($actions) {
             $actions->disableView();
-            $actions->disableDelete();
+            //$actions->disableDelete();
         });
 
         return $grid;
