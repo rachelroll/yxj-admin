@@ -127,8 +127,9 @@ class ProjectController extends Controller
         $form->text('description', '案例简介')->rules('required',['required'=>'必填项']);
         $form->text('author', '作者姓名');
         $form->simditor('content', '案例内容')->rules('required',['required'=>'必填项']);
-        $form->image('cover', '封面图')->rules('required',['required'=>'必填项']);
+        //$form->image('cover', '封面图')->rules('required',['required'=>'必填项']);
 
+        $form->cropper('cover','封面图')->cRatio(233,160);
         $form->select('district', '地区')
             ->options([
                 1 => '北京市',
